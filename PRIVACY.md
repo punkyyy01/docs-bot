@@ -1,33 +1,145 @@
 # Política de Privacidad (Privacy Policy)
 
-Última actualización: Junio de 2026
+**Última actualización:** 29 de junio de 2026
 
-Esta Política de Privacidad describe cómo Purgatory Bot ("el bot") recopila, utiliza y protege la información de los usuarios y servidores de Discord donde está instalado.
+Esta Política describe cómo **Purgatory Bot** recopila, utiliza, almacena y protege la información necesaria para ofrecer sus funcionalidades.
 
-## 1. Datos que recopilamos
-Para funcionar correctamente, el bot recopila y almacena la siguiente información:
-* **IDs de Discord:** Almacenamos IDs de usuarios, IDs de canales e IDs de servidores[cite: 1].
-* **Contenido de los mensajes:** El bot almacena el contenido de los mensajes de texto en texto plano en una base de datos local SQLite[cite: 1].
-* **Multimedia:** Almacenamos URLs de GIFs y de imágenes enviadas por los usuarios (incluyendo aquellas subidas a la CDN de Discord)[cite: 1]. 
-* **Nombres de usuario:** Se guarda el nombre de visualización (display name) de los usuarios junto a sus mensajes[cite: 1].
+---
 
-El bot **no** almacena contraseñas, correos electrónicos ni otros datos personales identificables fuera del contexto de Discord[cite: 1].
+# 1. Información recopilada
 
-## 2. Uso de la información
-Los datos recopilados se utilizan estrictamente para las funcionalidades principales del bot:
-* **Cadenas de Markov y Generación de Texto:** El contenido de los mensajes se utiliza para entrenar un modelo local de cadenas de Markov que permite al bot generar respuestas automáticas e imitar el estilo de escritura de los usuarios (comandos `/generar` e `/imitar`)[cite: 1].
-* **Generación de Memes:** Las imágenes guardadas en el pool del servidor se procesan para generar memes automáticos o mediante el comando `/momo`[cite: 1].
-* **Galería de GIFs:** Las URLs de GIFs recopiladas se utilizan para alimentar una galería web pública[cite: 1].
+Para funcionar correctamente, el bot puede almacenar la siguiente información:
 
-## 3. Servicios de Terceros
-El bot interactúa con servicios externos para ciertas funciones, lo que implica el procesamiento temporal de datos fuera de nuestra infraestructura:
-* **Cloudflare R2:** Utilizamos este servicio para almacenar de forma persistente los GIFs e imágenes que de otro modo expirarían en la CDN de Discord[cite: 1].
-* **Groq API:** Las imágenes y una muestra de los mensajes del servidor se envían a los modelos de inteligencia artificial de Groq (específicamente `llama-4-scout-17b-16e-instruct`) para generar el texto de los memes[cite: 1].
-* **Servicios de Música:** Las URLs de música se procesan mediante `yt-dlp` interactuando con plataformas como YouTube y SoundCloud[cite: 1].
+## Información de Discord
 
-## 4. Control y Retención de Datos
-* Los administradores del servidor pueden purgar completamente el historial de mensajes recopilados por el bot utilizando el comando `/corpus_wipe`[cite: 1].
-* Los administradores pueden evitar que el bot lea y almacene mensajes de canales específicos usando el comando `/corpus_ignorar add`[cite: 1].
+- IDs de usuarios.
+- IDs de servidores.
+- IDs de canales.
 
-## 5. Contacto
-Si tienes preguntas sobre esta política o deseas solicitar la eliminación manual de tus datos, por favor contacta al administrador del bot a través de Discord.
+Estos identificadores son utilizados únicamente para el funcionamiento interno del bot.
+
+---
+
+## Contenido de mensajes
+
+Cuando las funciones de aprendizaje están habilitadas, el bot almacena el contenido de mensajes de texto enviados en canales permitidos.
+
+Estos mensajes pueden utilizarse para:
+
+- Entrenar cadenas de Markov.
+- Generar respuestas automáticas.
+- Imitar el estilo de escritura de los usuarios.
+- Mejorar funciones relacionadas con memes y generación de texto.
+
+---
+
+## Multimedia
+
+El bot puede almacenar:
+
+- URLs de imágenes.
+- URLs de GIFs.
+- Archivos multimedia necesarios para las funciones de la galería de GIFs.
+
+Cuando corresponde, dichos archivos pueden almacenarse de forma persistente mediante Cloudflare R2.
+
+---
+
+## Nombre visible
+
+El nombre visible (Display Name) del usuario puede almacenarse junto con determinados mensajes para permitir funciones como la imitación de usuarios.
+
+---
+
+El bot **no recopila**:
+
+- Contraseñas.
+- Correos electrónicos.
+- Direcciones IP.
+- Información de pago.
+- Datos personales ajenos a los proporcionados por la API oficial de Discord.
+
+---
+
+# 2. Uso de la información
+
+La información recopilada se utiliza exclusivamente para proporcionar las funciones del bot, incluyendo:
+
+- Generación de texto mediante cadenas de Markov.
+- Generación de memes.
+- Galería de GIFs.
+- Reproducción de música.
+- Automatizaciones del servidor.
+- Configuración de comandos y preferencias.
+
+Los datos **no se venden** ni se utilizan para publicidad.
+
+---
+
+# 3. Servicios de terceros
+
+Purgatory Bot utiliza servicios externos para determinadas funciones.
+
+Actualmente pueden utilizarse:
+
+- **Discord** para la comunicación.
+- **Cloudflare R2** para almacenamiento multimedia.
+- **Groq API** para generación de memes mediante IA.
+- **yt-dlp** para la obtención de contenido multimedia compatible.
+- Otros servicios estrictamente necesarios para el funcionamiento del bot.
+
+Cada proveedor procesa únicamente la información necesaria para prestar su servicio.
+
+---
+
+# 4. Retención de datos
+
+Los datos recopilados se conservan únicamente mientras sean necesarios para el funcionamiento del bot.
+
+Los administradores del servidor pueden eliminar el contenido recopilado mediante herramientas incorporadas, como:
+
+- `/corpus_wipe`
+- `/corpus_ignore`
+
+Cuando el bot abandona un servidor o el corpus es eliminado, los datos asociados dejan de utilizarse para las funciones de aprendizaje.
+
+---
+
+# 5. Derechos de los usuarios
+
+Los administradores del servidor disponen de herramientas para controlar la recopilación de datos.
+
+Si consideras que existe información que debería eliminarse o tienes dudas sobre el tratamiento de los datos, puedes contactar al desarrollador.
+
+Cuando sea técnicamente posible, se atenderán las solicitudes razonables de eliminación de información.
+
+---
+
+# 6. Menores de edad
+
+Purgatory Bot está destinado a usuarios que cumplen con los requisitos mínimos de edad establecidos por Discord.
+
+---
+
+# 7. Seguridad
+
+Se adoptan medidas razonables para proteger la información almacenada.
+
+No obstante, ningún sistema puede garantizar una seguridad absoluta frente a incidentes o accesos no autorizados.
+
+---
+
+# 8. Cambios en esta Política
+
+Esta Política podrá actualizarse para reflejar nuevas funcionalidades, mejoras técnicas o cambios legales.
+
+La fecha de "Última actualización" indicará siempre la versión vigente.
+
+---
+
+# 9. Contacto
+
+Si tienes preguntas sobre esta Política o deseas solicitar la eliminación de información relacionada con el bot, puedes contactar al desarrollador mediante:
+
+- GitHub Issues del repositorio oficial.
+- Servidor oficial de Discord del proyecto (cuando corresponda).
